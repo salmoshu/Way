@@ -1,0 +1,29 @@
+<root main_tree_to_execute = "MainTree">
+    <BehaviorTree ID="MainTree">
+        <Sequence>
+            <SetBlackboard output_key="Status_a" value="A2B" />
+            <SetBlackboard output_key="Status_b" value="FOLLOWING" />
+            <Sequence>
+                <IsBatteryLow />
+                <IsComponentValid />
+                <IsMapValid />
+            </Sequence>
+            <ReactiveSequence>
+                <Repeat num_cycles="10">
+                    <Sequence>
+                        <SubTree ID="MoveRobot" target="Status_b" />
+                        <SubTree ID="MoveRobot" target="Status_a" />
+                    </Sequence>
+                </Repeat>
+            </ReactiveSequence>
+        </Sequence>
+    </BehaviorTree>
+
+    <BehaviorTree ID="MoveRobot">
+        <Sequence name="SetGoal">
+            <RetryUntilSuccessful num_attempts="4">
+                <MovingBase server_name="move_base" timeout="3000" goal="{target}" />
+            </RetryUntilSuccessful>
+        </Sequence>
+    </BehaviorTree>
+</root>

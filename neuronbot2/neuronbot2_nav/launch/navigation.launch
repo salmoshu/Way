@@ -31,5 +31,8 @@
     <param if="$(eval namespace != '')" name="local_costmap/robot_base_frame" value="$(arg namespace)/base_footprint" />
     <param if="$(eval namespace != '')" name="local_costmap/obstacle_layer/laser/sensor_frame" value="$(arg namespace)/laser_frame" />
     <param if="$(eval namespace != '')" name="local_costmap/sensor/laser/sensor_frame" value="$(arg namespace)/laser_frame" />
+
+    <!-- define the global planner type -->
+    <!-- <param name="base_global_planner" value="simple_global_planner/SimpleGlobalPlanner"/> -->
   </node>
 </launch>

@@ -1,0 +1,4 @@
+<launch>
+	<!-- <node pkg="way_behavior_tree" type="test_server" name="test_server" output="screen" /> -->
+	<node pkg="way_behavior_tree" type="bt_engine" name="bt_engine" output="screen" />
+</launch>
