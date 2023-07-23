@@ -9,7 +9,7 @@ using namespace BT;
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "simple_mower");
+  ros::init(argc, argv, "simple_robot");
   // ros::NodeHandle nh;
 
   BehaviorTreeFactory factory_;
@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 
   std::string pkg_path = ros::package::getPath("way_behavior_tree");
 
-  // auto tree = factory_.createTreeFromFile(pkg_path + "/trees/simple_mower_tree.xml");
+  // auto tree = factory_.createTreeFromFile(pkg_path + "/trees/simple_robot_tree.xml");
   // auto tree = factory_.createTreeFromFile(pkg_path + "/trees/move_robot.xml");
   auto tree = factory_.createTreeFromFile(pkg_path + "/trees/follow_path.xml");
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
