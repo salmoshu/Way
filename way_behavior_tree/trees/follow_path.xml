@@ -1,17 +1,20 @@
 <root main_tree_to_execute = "MainTree">
     <BehaviorTree ID="MainTree">
         <Sequence>
+            <!-- <SetBlackboard output_key="Goal_a" value="0.0;0.0;0.0;1.0" /> -->
+            <!-- <SetBlackboard output_key="Goal_b" value="-2.060713;-0.094490;0.414473;0.910062" /> -->
             <SetBlackboard output_key="Status_a" value="A2B" />
             <SetBlackboard output_key="Status_b" value="FOLLOWING" />
-            <Sequence>
+            <!-- <Sequence>
                 <IsBatteryLow />
                 <IsComponentValid />
                 <IsMapValid />
-            </Sequence>
+            </Sequence> -->
             <ReactiveSequence>
                 <Repeat num_cycles="10">
                     <Sequence>
-                        <SubTree ID="MoveRobot" target="Status_b" />
+                        <SubTree ID="FollowRobot" target="Status_b" />
+                        <!-- <SubTree ID="FollowRobot" target="Goal_b" /> -->
                         <SubTree ID="MoveRobot" target="Status_a" />
                     </Sequence>
                 </Repeat>
@@ -23,6 +26,14 @@
         <Sequence name="SetGoal">
             <RetryUntilSuccessful num_attempts="4">
                 <MoveBase server_name="move_base" timeout="3000" goal="{target}" />
+            </RetryUntilSuccessful>
+        </Sequence>
+    </BehaviorTree>
+
+    <BehaviorTree ID="FollowRobot">
+        <Sequence name="SetGoal">
+            <RetryUntilSuccessful num_attempts="4">
+                <FollowPath server_name="move_base" timeout="3000" goal="{target}" />
             </RetryUntilSuccessful>
         </Sequence>
     </BehaviorTree>

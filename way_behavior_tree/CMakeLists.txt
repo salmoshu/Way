@@ -88,6 +88,15 @@ add_dependencies(move_base_action ${${PROJECT_NAME}_EXPORTED_TARGETS})
 target_link_libraries(move_base_action PRIVATE ${BEHAVIOR_TREE_LIBRARY} ${catkin_LIBRARIES})
 target_compile_definitions(move_base_action  PRIVATE BT_PLUGIN_EXPORT)
 
+### action: follow_path
+add_library(follow_path_action SHARED
+  include/way_behavior_tree/plugins/action/follow_path_action.h
+  plugins/action/follow_path_action.cpp
+)
+add_dependencies(follow_path_action ${${PROJECT_NAME}_EXPORTED_TARGETS})
+target_link_libraries(follow_path_action PRIVATE ${BEHAVIOR_TREE_LIBRARY} ${catkin_LIBRARIES})
+target_compile_definitions(follow_path_action  PRIVATE BT_PLUGIN_EXPORT)
+
 ### action: full_coverage_path_planner
 # add_library(full_coverage_path_planner SHARED
 #   include/way_behavior_tree/plugins/action/full_coverage_path_planner.h

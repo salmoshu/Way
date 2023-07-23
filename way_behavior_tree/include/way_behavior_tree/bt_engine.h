@@ -9,6 +9,7 @@ const std::vector<std::string> plugin_libraries = {
   // "print_value_action2",
   "move_a2b_action",
   "move_base_action",
+  "follow_path_action",
   
   /* condition */
   "is_battery_low_condition",
