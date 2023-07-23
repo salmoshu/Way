@@ -1,4 +1,4 @@
-#include "way_behavior_tree/plugins/action/moving_base_action.h"
+#include "way_behavior_tree/plugins/action/move_base_action.h"
 
 using namespace BT;
 
@@ -8,7 +8,7 @@ using namespace BT;
 namespace way_behavior_tree
 {
 
-bool MovingBaseAction::sendGoal(GoalType& msg)
+bool MoveBaseAction::sendGoal(GoalType& msg)
 {
     auto move_status = getInput<std::string>("goal");
     if (!move_status) {
@@ -58,23 +58,23 @@ bool MovingBaseAction::sendGoal(GoalType& msg)
     return true;
 }
 
-NodeStatus MovingBaseAction::onResult( const ResultType& res)
+NodeStatus MoveBaseAction::onResult( const ResultType& res)
 {
-    ROS_INFO("MovingBaseAction: result received");
+    ROS_INFO("MoveBaseAction: result received");
     return NodeStatus::SUCCESS;
 }
 
-NodeStatus MovingBaseAction::onFailedRequest(FailureCause failure)
+NodeStatus MoveBaseAction::onFailedRequest(FailureCause failure)
 {
-    ROS_ERROR("MovingBaseAction request failed %d", static_cast<int>(failure));
+    ROS_ERROR("MoveBaseAction request failed %d", static_cast<int>(failure));
     return NodeStatus::FAILURE;
 }
 
-void MovingBaseAction::halt()
+void MoveBaseAction::halt()
 {
     if( status() == NodeStatus::RUNNING )
     {
-        ROS_WARN("MovingBaseAction halted");
+        ROS_WARN("MoveBaseAction halted");
         BaseClass::halt();
     }
 }
@@ -85,5 +85,5 @@ void MovingBaseAction::halt()
 // #include "behaviortree_cpp_v3/bt_factory.h"
 BT_REGISTER_NODES(factory)
 {
-  RegisterRosAction<way_behavior_tree::MovingBaseAction>(factory, "MovingBase");
+  RegisterRosAction<way_behavior_tree::MoveBaseAction>(factory, "MoveBase");
 }

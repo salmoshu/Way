@@ -18,8 +18,8 @@ int main(int argc, char **argv)
   std::string pkg_path = ros::package::getPath("way_behavior_tree");
 
   // auto tree = factory_.createTreeFromFile(pkg_path + "/trees/simple_mower_tree.xml");
-  auto tree = factory_.createTreeFromFile(pkg_path + "/trees/move_robot.xml");
-  // auto tree = factory_.createTreeFromFile(pkg_path + "/trees/follow_path.xml");
+  // auto tree = factory_.createTreeFromFile(pkg_path + "/trees/move_robot.xml");
+  auto tree = factory_.createTreeFromFile(pkg_path + "/trees/follow_path.xml");
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
   BT::PublisherZMQ publisher_zmq(tree);
   BT::StdCoutLogger logger_cout(tree);

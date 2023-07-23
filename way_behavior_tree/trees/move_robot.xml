@@ -22,7 +22,7 @@
     <BehaviorTree ID="MoveRobot">
         <Sequence name="SetGoal">
             <RetryUntilSuccessful num_attempts="4">
-                <MovingA2B server_name="move_base" timeout="3000" goal="{target}" />
+                <MoveA2B server_name="move_base" timeout="3000" goal="{target}" />
             </RetryUntilSuccessful>
         </Sequence>
     </BehaviorTree>

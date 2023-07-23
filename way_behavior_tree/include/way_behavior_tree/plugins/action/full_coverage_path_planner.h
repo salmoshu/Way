@@ -1,5 +1,5 @@
-#ifndef WAY_BEHAVIOR_TREE__PLUGINS__ACTION__MOVING_A2B_H_
-#define WAY_BEHAVIOR_TREE__PLUGINS__ACTION__MOVING_A2B_H_
+#ifndef WAY_BEHAVIOR_TREE__PLUGINS__ACTION__MOVE_A2B_H_
+#define WAY_BEHAVIOR_TREE__PLUGINS__ACTION__MOVE_A2B_H_
 
 #include <behaviortree_cpp_v3/action_node.h>
 #include "behaviortree_cpp_v3/bt_factory.h"
@@ -97,4 +97,4 @@ inline void RegisterNodes(BehaviorTreeFactory& factory)
 
 }
 
-#endif  // WAY_BEHAVIOR_TREE__PLUGINS__ACTION__MOVING_A2B_H_
+#endif  // WAY_BEHAVIOR_TREE__PLUGINS__ACTION__MOVE_A2B_H_

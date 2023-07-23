@@ -1,5 +1,5 @@
-#ifndef WAY_BEHAVIOR_TREE__PLUGINS__ACTION__MOVING_BASE_H_
-#define WAY_BEHAVIOR_TREE__PLUGINS__ACTION__MOVING_BASE_H_
+#ifndef WAY_BEHAVIOR_TREE__PLUGINS__ACTION__MOVE_BASE_H_
+#define WAY_BEHAVIOR_TREE__PLUGINS__ACTION__MOVE_BASE_H_
 
 #include <behaviortree_cpp_v3/action_node.h>
 
@@ -12,11 +12,11 @@ using namespace BT;
 namespace way_behavior_tree
 {
 
-class MovingBaseAction: public RosActionNode<move_base_msgs::MoveBaseAction>
+class MoveBaseAction: public RosActionNode<move_base_msgs::MoveBaseAction>
 {
 
 public:
-  MovingBaseAction( const std::string& name, const NodeConfiguration & conf):
+  MoveBaseAction( const std::string& name, const NodeConfiguration & conf):
 RosActionNode<move_base_msgs::MoveBaseAction>(name, conf) {}
 
   static PortsList providedPorts()
@@ -35,4 +35,4 @@ private:
 
 }
 
-#endif  // WAY_BEHAVIOR_TREE__PLUGINS__ACTION__MOVING_BASE_H_
+#endif  // WAY_BEHAVIOR_TREE__PLUGINS__ACTION__MOVE_BASE_H_

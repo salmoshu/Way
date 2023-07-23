@@ -70,23 +70,23 @@ add_dependencies(print_value_action ${${PROJECT_NAME}_EXPORTED_TARGETS})
 target_link_libraries(print_value_action PRIVATE ${BEHAVIOR_TREE_LIBRARY})
 target_compile_definitions(print_value_action  PRIVATE BT_PLUGIN_EXPORT)
 
-### action: moving_a2b
-add_library(moving_a2b_action SHARED
-  include/way_behavior_tree/plugins/action/moving_a2b_action.h
-  plugins/action/moving_a2b_action.cpp
+### action: move_a2b
+add_library(move_a2b_action SHARED
+  include/way_behavior_tree/plugins/action/move_a2b_action.h
+  plugins/action/move_a2b_action.cpp
 )
-add_dependencies(moving_a2b_action ${${PROJECT_NAME}_EXPORTED_TARGETS})
-target_link_libraries(moving_a2b_action PRIVATE ${BEHAVIOR_TREE_LIBRARY} ${catkin_LIBRARIES})
-target_compile_definitions(moving_a2b_action  PRIVATE BT_PLUGIN_EXPORT)
+add_dependencies(move_a2b_action ${${PROJECT_NAME}_EXPORTED_TARGETS})
+target_link_libraries(move_a2b_action PRIVATE ${BEHAVIOR_TREE_LIBRARY} ${catkin_LIBRARIES})
+target_compile_definitions(move_a2b_action  PRIVATE BT_PLUGIN_EXPORT)
 
-### action: moving_base
-add_library(moving_base_action SHARED
-  include/way_behavior_tree/plugins/action/moving_base_action.h
-  plugins/action/moving_base_action.cpp
+### action: move_base
+add_library(move_base_action SHARED
+  include/way_behavior_tree/plugins/action/move_base_action.h
+  plugins/action/move_base_action.cpp
 )
-add_dependencies(moving_base_action ${${PROJECT_NAME}_EXPORTED_TARGETS})
-target_link_libraries(moving_base_action PRIVATE ${BEHAVIOR_TREE_LIBRARY} ${catkin_LIBRARIES})
-target_compile_definitions(moving_base_action  PRIVATE BT_PLUGIN_EXPORT)
+add_dependencies(move_base_action ${${PROJECT_NAME}_EXPORTED_TARGETS})
+target_link_libraries(move_base_action PRIVATE ${BEHAVIOR_TREE_LIBRARY} ${catkin_LIBRARIES})
+target_compile_definitions(move_base_action  PRIVATE BT_PLUGIN_EXPORT)
 
 ### action: full_coverage_path_planner
 # add_library(full_coverage_path_planner SHARED
