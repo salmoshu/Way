@@ -27,10 +27,9 @@ Pose2D BT::convertFromString(BT::StringView key)
 
   if (parts.size() != 4)
   {
-    throw BT::RuntimeError("invalid input)");
+    throw BT::RuntimeError("Invalid input of Pose2D format");
   }
-  else
-  {
+  else  {
     Pose2D output;
     output.x     = convertFromString<double>(parts[0]);
     output.y     = convertFromString<double>(parts[1]);
