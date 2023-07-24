@@ -24,6 +24,8 @@ bool MoveA2BAction::sendGoal(GoalType& msg)
 
   ROS_INFO("Sending goal %f %f %f %f", goal.x, goal.y, goal.quaternion_z, goal.quaternion_w);
 
+  system("rosrun dynamic_reconfigure dynparam set /move_base base_global_planner navfn/NavfnROS");
+
   // Build the message from Pose2D
   msg.target_pose.header.frame_id = "map";
   msg.target_pose.header.stamp = ros::Time::now();
