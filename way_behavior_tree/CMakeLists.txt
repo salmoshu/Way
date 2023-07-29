@@ -97,15 +97,6 @@ add_dependencies(follow_path_action ${${PROJECT_NAME}_EXPORTED_TARGETS})
 target_link_libraries(follow_path_action PRIVATE ${BEHAVIOR_TREE_LIBRARY} ${catkin_LIBRARIES})
 target_compile_definitions(follow_path_action  PRIVATE BT_PLUGIN_EXPORT)
 
-### action: full_coverage_path_planner
-# add_library(full_coverage_path_planner SHARED
-#   include/way_behavior_tree/plugins/action/full_coverage_path_planner.h
-#   plugins/action/full_coverage_path_planner.cpp
-# )
-# add_dependencies(full_coverage_path_planner ${${PROJECT_NAME}_EXPORTED_TARGETS})
-# target_link_libraries(full_coverage_path_planner PRIVATE ${BEHAVIOR_TREE_LIBRARY} ${catkin_LIBRARIES})
-# target_compile_definitions(full_coverage_path_planner  PRIVATE BT_PLUGIN_EXPORT)
-
 ### condiction: is_battery_low
 add_library(is_battery_low_condition SHARED
   include/way_behavior_tree/plugins/condition/is_battery_low_condition.h
